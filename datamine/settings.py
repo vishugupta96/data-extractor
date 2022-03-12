@@ -59,7 +59,6 @@ INSTALLED_APPS = [
     #crispy
     'crispy_forms',
 
-    'storages',
 
 ]
 
