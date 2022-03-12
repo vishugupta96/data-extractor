@@ -38,6 +38,7 @@ def yt_data_mine():
     time.sleep(2)
     description = browser.find_elements_by_xpath('//*[@id="tabsContent"]/tp-yt-paper-tab[7]/div')
     print(description[0].text)
+    print('thats just the way ai am')
     time.sleep(2)
     description[0].click()
     time.sleep(2)
