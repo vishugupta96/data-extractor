@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-f2+0s8k#if10gh34ffxciu8_flv7%vlthv=(qwr*=%p4wv%+f9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['http://127.0.0.1','https://data-miner-2022.herokuapp.com/']
 
 
 
@@ -59,10 +59,13 @@ INSTALLED_APPS = [
     #crispy
     'crispy_forms',
 
+    'storages',
+
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.whiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -170,8 +173,8 @@ SOCIALACCOUNT_PROVIDERS = {
 }
 
 
-# STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-# STATIC_TMP = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATIC_TMP = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'static'),
 )

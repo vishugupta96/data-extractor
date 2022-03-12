@@ -1,0 +1,1 @@
+web: gunicorn datamine.wsgi --log-file -
