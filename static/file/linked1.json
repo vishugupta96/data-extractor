@@ -1,0 +1,34 @@
+{
+    "firstName": "Rohan",
+    "lastname": "L.",
+    "skills": [
+        "Risk Management",
+        "Risk Assessment",
+        "Project Management",
+        "Project Portfolio Management",
+        "EPCM",
+        "Management Consulting",
+        "Program Management",
+        "Strategic Planning",
+        "Enterprise Risk Management",
+        "IT Service Management",
+        "Governance",
+        "Financial Risk",
+        "PMO",
+        "SDLC",
+        "Project Delivery",
+        "Business Process Improvement",
+        "Stakeholder Management"
+    ],
+    "student": false,
+    "experience": [
+        "Bechtel Corporation",
+        "Pcubed",
+        "Brisbane City Council",
+        "Protiviti",
+        "PricewaterhouseCoopers"
+    ],
+    "education": "University of Sydney",
+    "industryName": "Mining & Metals",
+    "summary": "Specialising in project risk management and the strategic implementation of project management, I am passionate about working within organizations to maximise their project portfolio investment.\n\nAmongst my many interests the commercialization of space takes up much of my spare time. In particular I am attracted to projects that can make the colonization of Mars a reality, but also anything from Space Tourism to Space Mining or associated technologies involving teleoperations."
+}

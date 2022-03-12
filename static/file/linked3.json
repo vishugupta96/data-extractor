@@ -1,0 +1,223 @@
+{
+    "staffingCompany": false,
+    "companyIndustries": [
+        {
+            "localizedName": "Entertainment",
+            "entityUrn": "urn:li:fs_industry:28"
+        }
+    ],
+    "callToAction": {
+        "callToActionType": "VIEW_WEBSITE",
+        "visible": true,
+        "callToActionMessage": {
+            "textDirection": "USER_LOCALE",
+            "text": "Visit website"
+        },
+        "url": "http://jobs.netflix.com"
+    },
+    "staffCount": 14589,
+    "adsRule": "REDUCED",
+    "companyEmployeesSearchPageUrl": "https://www.linkedin.com/vsearch/p?f_CC=165158",
+    "viewerFollowingJobsUpdates": false,
+    "staffCountRange": {
+        "start": 5001,
+        "end": 10000
+    },
+    "permissions": {
+        "landingPageAdmin": false,
+        "admin": false,
+        "adAccountHolder": false
+    },
+    "logo": {
+        "image": {
+            "com.linkedin.common.VectorImage": {
+                "artifacts": [
+                    {
+                        "width": 200,
+                        "fileIdentifyingUrlPathSegment": "200_200/0/1519896425167?e=1649894400&v=beta&t=EKmpNe8MvMm9p4crLcqZCuar24oy22VXvglTkN-Ge_c",
+                        "expiresAt": 1649894400000,
+                        "height": 200
+                    },
+                    {
+                        "width": 100,
+                        "fileIdentifyingUrlPathSegment": "100_100/0/1519896425167?e=1649894400&v=beta&t=H-hB9Tme8x84ouX0OphL8hsi0z1frL0IGfB7iJXpCA8",
+                        "expiresAt": 1649894400000,
+                        "height": 100
+                    },
+                    {
+                        "width": 400,
+                        "fileIdentifyingUrlPathSegment": "400_400/0/1519896425167?e=1649894400&v=beta&t=gE9fsU5QlBenKW34XqsJlzev9trSpWx_lvxLVzKZ9p0",
+                        "expiresAt": 1649894400000,
+                        "height": 400
+                    }
+                ],
+                "rootUrl": "https://media-exp1.licdn.com/dms/image/C4E0BAQEVb0ZISWk8vQ/company-logo_"
+            }
+        },
+        "type": "SQUARE_LOGO"
+    },
+    "claimable": false,
+    "specialities": [
+        "Revolutionizing the way people watch TV shows and movies!"
+    ],
+    "confirmedLocations": [
+        {
+            "country": "US",
+            "geographicArea": "CA",
+            "city": "Los Gatos",
+            "description": "Headquarters",
+            "streetAddressOptOut": false,
+            "headquarter": true,
+            "line1": "100 Winchester Circle"
+        },
+        {
+            "country": "US",
+            "geographicArea": "CA",
+            "city": "Los Angeles",
+            "postalCode": "90028",
+            "description": "Los Angeles",
+            "streetAddressOptOut": false,
+            "headquarter": false,
+            "line1": "5808 W Sunset Blvd"
+        },
+        {
+            "country": "BR",
+            "geographicArea": "SP",
+            "city": "Barueri",
+            "postalCode": "06455-030",
+            "description": "Sao Paulo ",
+            "streetAddressOptOut": false,
+            "headquarter": false,
+            "line1": "Alameda Xingu, 350"
+        },
+        {
+            "country": "US",
+            "city": "New York",
+            "postalCode": "10011",
+            "description": "New York City",
+            "streetAddressOptOut": false,
+            "headquarter": false,
+            "line1": "245 W 17th St"
+        },
+        {
+            "country": "NL",
+            "geographicArea": "North Holland",
+            "city": "Amsterdam",
+            "postalCode": "1072 AB",
+            "description": "Amsterdam",
+            "streetAddressOptOut": false,
+            "headquarter": false,
+            "line1": "Stadhouderskade 55"
+        },
+        {
+            "country": "SG",
+            "city": "Marina South",
+            "postalCode": "01",
+            "description": "Singapore",
+            "streetAddressOptOut": false,
+            "headquarter": false,
+            "line1": "9 Straits Vw"
+        }
+    ],
+    "followingInfo": {
+        "entityUrn": "urn:li:fs_followingInfo:urn:li:company:165158",
+        "dashFollowingStateUrn": "urn:li:fsd_followingState:urn:li:fsd_company:165158",
+        "following": false,
+        "followingType": "DEFAULT",
+        "followerCount": 8064136
+    },
+    "viewerEmployee": false,
+    "lcpTreatment": true,
+    "name": "Netflix",
+    "$recipeType": "com.linkedin.voyager.deco.organization.web.WebFullCompanyMain",
+    "fundingData": {
+        "fundingRoundListCrunchbaseUrl": "https://www.crunchbase.com/organization/netflix/funding_rounds/funding_rounds_list?utm_source=linkedin&utm_medium=referral&utm_campaign=linkedin_companies&utm_content=all_fundings",
+        "lastFundingRound": {
+            "investorsCrunchbaseUrl": "https://www.crunchbase.com/funding_round/netflix-post-ipo-debt--c73a9378?utm_source=linkedin&utm_medium=referral&utm_campaign=linkedin_companies&utm_content=all_investors",
+            "leadInvestors": [],
+            "fundingRoundCrunchbaseUrl": "https://www.crunchbase.com/funding_round/netflix-post-ipo-debt--c73a9378?utm_source=linkedin&utm_medium=referral&utm_campaign=linkedin_companies&utm_content=last_funding",
+            "fundingType": "POST_IPO_DEBT",
+            "moneyRaised": {
+                "currencyCode": "USD",
+                "amount": "2666198"
+            },
+            "numOtherInvestors": 1,
+            "announcedOn": {
+                "month": 5,
+                "day": 5,
+                "year": 2018
+            }
+        },
+        "companyCrunchbaseUrl": "https://www.crunchbase.com/organization/netflix?utm_source=linkedin&utm_medium=referral&utm_campaign=linkedin_companies&utm_content=profile_cta",
+        "numFundingRounds": 13,
+        "updatedAt": 1637648114
+    },
+    "overviewPhoto": {
+        "com.linkedin.common.VectorImage": {
+            "artifacts": [
+                {
+                    "width": 900,
+                    "fileIdentifyingUrlPathSegment": "https://media-exp1.licdn.com/dms/image/C4E1CAQH4qu1fM2VqsQ/company-overview_900_300/0/1519842573849?e=1641988800&v=beta&t=8NZ2PhIXgu4dr-1q7L2C65qMOsgKtuG3FrpcT6Y-yrI",
+                    "expiresAt": 1641988800000,
+                    "height": 300
+                }
+            ],
+            "rootUrl": ""
+        }
+    },
+    "description": "Netflix is the world's leading streaming entertainment service with 214 million paid memberships in over 190 countries enjoying TV series, documentaries, feature films and mobile games across a wide variety of genres and languages. Members can watch as much as they want, anytime, anywhere, on any Internet-connected screen. Members can play, pause and resume watching, all without commercials or commitments.",
+    "entityUrn": "urn:li:fs_normalized_company:165158",
+    "headquarter": {
+        "country": "US",
+        "geographicArea": "CA",
+        "city": "Los Gatos",
+        "line1": "100 Winchester Circle"
+    },
+    "coverPhoto": {
+        "com.linkedin.voyager.common.MediaProcessorImage": {
+            "id": "/AAEAAQAAAAAAAALSAAAAJGFlYWU5YjFlLWI5NDYtNGQ3ZS05Nzk0LWEwOWFlOGY1ZTQ4MA.png"
+        }
+    },
+    "associatedHashtags": [
+        "urn:li:fs_contentTopicData:urn:li:hashtag:netflixanimation",
+        "urn:li:fs_contentTopicData:urn:li:hashtag:somosnetflix",
+        "urn:li:fs_contentTopicData:urn:li:hashtag:wearenetflix"
+    ],
+    "groups": [],
+    "url": "https://www.linkedin.com/company/netflix",
+    "claimableByViewer": false,
+    "jobSearchPageUrl": "https://www.linkedin.com/jobs/search?geoId=92000000&f_C=165158",
+    "backgroundCoverImage": {
+        "image": {
+            "com.linkedin.common.VectorImage": {
+                "artifacts": [
+                    {
+                        "width": 10000,
+                        "fileIdentifyingUrlPathSegment": "10000/0/1566509804379?e=1641988800&v=beta&t=zI3p4PtwXKk67GMAlDJyU4f3gBXKTxbex5wWNjLxkJA",
+                        "expiresAt": 1641988800000,
+                        "height": 10000
+                    },
+                    {
+                        "width": 400,
+                        "fileIdentifyingUrlPathSegment": "400/0/1566509804379?e=1641988800&v=beta&t=JqeX9E3lpFZmFhUh-epY3uk2kSymMA--6T23gtx1Kr4",
+                        "expiresAt": 1641988800000,
+                        "height": 400
+                    },
+                    {
+                        "width": 200,
+                        "fileIdentifyingUrlPathSegment": "200/0/1566509804379?e=1641988800&v=beta&t=MmQQhvegHabfvCs5TO7iS2Nsf7ORTadXQKr5eE9NK0I",
+                        "expiresAt": 1641988800000,
+                        "height": 200
+                    }
+                ],
+                "rootUrl": "https://media-exp1.licdn.com/dms/image/C561BAQFn0BsNkXq0sA/company-background_"
+            }
+        },
+        "cropInfo": {
+            "x": 0,
+            "width": 1046,
+            "y": 148,
+            "height": 177
+        }
+    }
+}

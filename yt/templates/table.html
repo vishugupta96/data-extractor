@@ -1,0 +1,97 @@
+<!-- Write HTML code here -->
+{% extends 'base1.html' %}
+{% load static %}
+
+
+
+  
+{% block tabs %}
+<!-- Icon -->
+<li class="nav-item">
+  <a class="current" href="{% url 'app:house' %}">
+	<i class="fab fa-twitter"></i>
+  </a>
+</li>
+<!-- Icon -->
+<li class="nav-item me-3 me-lg-0">
+  <a class="nav-link" href="{% url 'app:yt' %}">
+	<i class="fab fa-youtube"></i>
+  </a>
+</li>
+<!-- Icon -->
+<li class="nav-item me-3 me-lg-0">
+  <a class="nav-link" href="/linkedin/">
+	<i class="fab fa-linkedin-in"></i>
+  </a>
+</li>
+<li class="nav-item me-3 me-lg-0">
+  <a class="nav-link" href="{% url 'app:insta' %}">
+	<i class="fab fa-instagram"></i>
+  </a>
+</li>
+
+</li>
+{% endblock %}
+
+
+  {% block content %}
+  <!--Main layout-->
+  <main style="margin-top: 100px">
+
+
+  <div class="container">
+
+    <form action="" method="post">
+      {% csrf_token %}
+      <div class="form-group" >
+        <label for="screen">Enter Screen Name for Extraction</label>
+        <input type="text" class="form-control" name="screen" placeholder="screen ">
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+
+    
+	<h2 class="text-center">20 Tweets</h2><br>
+	<h3>Download CSV:</h3><button ><a href="{{file_url}}">Click to view</a></button><br>
+	
+	<table class="table table-dark table-striped">
+		<thead>
+		<tr>
+			<th>Tweets</th>
+			<th>Likes</th>
+			<th>Time</th>
+			<th>Scource</th>
+			<th>Name</th>
+			<th>Followers</th>
+			<th>Friend_count</th>
+			<th>Retweets</th>
+		</tr>
+		</thead>
+		<tbody>
+		<!-- jinja2 Technique -->
+		{% if d %}
+		{% for i in d %}
+		<tr>
+			<td>{{i.tweets}}</td>
+			<td>{{i.likes}}</td>
+			<td>{{i.time}}</td>
+			<td>{{i.Scource}}</td>
+			<td>{{i.name}}</td>
+			<td>{{i.followers}}</td>
+			<td>{{i.friend_count}}</td>
+			<td>{{i.retweets}}</td>
+	
+		</tr>
+		{% endfor %}
+		{% endif %}
+		</tbody>
+	</table>
+	</div>
+</main>
+  <!--Main layout-->
+  {% endblock %}
+
+</body>
+
+</html>

@@ -1,0 +1,87 @@
+<!-- Write HTML code here -->
+{% extends 'base1.html' %}
+{% load static %}
+
+  
+{% block tabs %}
+<!-- Icon -->
+<li class="nav-item">
+  <a class="nav-link" href="{% url 'app:house' %}">
+	<i class="fab fa-twitter"></i>
+  </a>
+</li>
+<!-- Icon -->
+<li class="nav-item me-3 me-lg-0">
+  <a class="nav-link" href="{% url 'app:yt' %}">
+	<i class="fab fa-youtube"></i>
+  </a>
+</li>
+<!-- Icon -->
+<li class="nav-item me-3 me-lg-0">
+  <a class="current" href="/linkedin/">
+	<i class="fab fa-linkedin-in"></i>
+  </a>
+</li>
+<li class="nav-item me-3 me-lg-0">
+  <a class="nav-link" href="{% url 'app:insta' %}">
+	<i class="fab fa-instagram"></i>
+  </a>
+</li>
+
+</li>
+{% endblock %}
+
+
+  {% block content %}
+  <!--Main layout-->
+  <main style="margin-top: 100px">
+
+
+  <div class="container">
+	<h1 class="text-center"> LinkedIn Data </h1><br>
+    <form action="" method="post">
+      {% csrf_token %}
+      <div class="form-group" >
+        <label for="screen">Press Run Extract data </label>
+        
+      </div>
+
+      <button type="submit" class="btn btn-primary">Run</button>
+    </form>
+		</br>
+    <h2>Profile Data</h2>
+	
+	<h3>Download json:</h3><button ><a href="{{file_url}}">Click to view</a></button><br>
+	
+	<table class="table table-dark table-striped">
+		
+		<!-- jinja2 Technique -->
+		{% if d %}
+			{% for dr in d %}
+        {{dr}}
+      {% endfor %}
+
+		{% endif %}
+
+	</table>
+	<h2>Company Data</h2>
+	<h3>Download json:</h3><button ><a href="{{file_2_url}}">Click to view</a></button><br>
+	
+	
+	<table class="table table-dark table-striped">
+		
+		<!-- jinja2 Technique -->
+		{% if c %}
+			{{ c }}
+		{% endif %}
+
+	</table>
+	
+	</div>
+</main>
+  <!--Main layout-->
+  {% endblock %}
+
+</body>
+
+</html>

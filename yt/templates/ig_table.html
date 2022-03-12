@@ -1,0 +1,196 @@
+<!-- Write HTML code here -->
+{% extends 'base1.html' %}
+{% load static %}
+
+{% block tabs %}
+<!-- Icon -->
+<li class="nav-item">
+  <a class="nav-link" href="{% url 'app:house' %}">
+	<i class="fab fa-twitter"></i>
+  </a>
+</li>
+<!-- Icon -->
+<li class="nav-item me-3 me-lg-0">
+  <a class="nav-link" href="{% url 'app:yt' %}">
+	<i class="fab fa-youtube"></i>
+  </a>
+</li>
+<!-- Icon -->
+<li class="nav-item me-3 me-lg-0">
+  <a class="nav-link" href="/linkedin/">
+	<i class="fab fa-linkedin-in"></i>
+  </a>
+</li>
+<li class="nav-item me-3 me-lg-0">
+  <a class="current" href="{% url 'app:insta' %}">
+	<i class="fab fa-instagram"></i>
+  </a>
+</li>
+
+</li>
+{% endblock %}
+
+  {% block content %}
+  <!--Main layout-->
+  <main style="margin-top: 80px">
+
+
+
+	<div class="container">
+		<h1 class="text-center"> Instgram Data </h1><br>
+		<form action="" method="post">
+		  {% csrf_token %}
+		  <div class="form-group" >
+			<label for="screen">Press Run Extract data </label>
+			
+		  </div>
+	
+		  <button type="submit" class="btn btn-primary">Run</button>
+		</form>
+			</br>
+		<h2 class="text-center"><u>Account Info</u></h2><br>			
+		<table class="table table-dark table-striped">
+			<thead>
+			<tr>
+				
+				<th>username</th>
+				<th>media_count</th>
+				<th>followers</th>
+				<th>following</th>
+	
+		
+			</tr>
+			</thead>
+			<tbody>
+			<!-- jinja2 Technique -->
+			{% if f %}
+			{% for i in f %}
+			<tr>
+				
+				<td>{{i.username}}</td>
+				<td>{{i.media_count}}</td>
+				<td>{{i.followers}}</td>
+				<td>{{i.following}}</td>
+	
+		
+		
+			</tr>
+			{% endfor %}
+			{% endif %}
+			</tbody>
+		</table>
+	</div>
+
+	<div class="container">
+		
+		<h2 class="text-center"><u>10 - media</u></h2><br>	
+		<h3>Download CSV:</h3><button ><a href="{{ media }}">Click to view</a></button><br>
+		
+		<table class="table table-dark table-striped">
+			<thead>
+			<tr>
+				<th>id</th>
+				<th>timestamp</th>
+				<th>caption</th>
+				<th>comments_count</th>
+				<!-- <th>media_url</th> -->
+				<th>media_type</th>
+				<th>likes_count</th>
+		
+			</tr>
+			</thead>
+			<tbody>
+			<!-- jinja2 Technique -->
+			{% if d %}
+			{% for i in d %}
+			<tr>
+				<td>{{i.id}}</td>
+				<td>{{i.timestamp}}</td>
+				<td>{{i.caption}}</td>
+				<td>{{i.comments_count}}</td>
+				<!-- <td>{{i.media_url}}</td> -->
+				<td>{{i.media_type}}</td>
+				<td>{{i.like_count}}</td>
+		
+		
+			</tr>
+			{% endfor %}
+			{% endif %}
+			</tbody>
+		</table>
+		</div>
+		
+		
+		
+		<div class="container">
+			
+			<h2 class="text-center"><u>10 - Comments </u></h2><br>
+			<h3>Download CSV:</h3><button ><a href="{{ comments }}">Click to view</a></button><br>
+			
+			<table class="table table-dark table-striped">
+				<thead>
+				<tr>
+					<th>id</th>
+					<th>username</th>
+					<th>text</th>
+		
+			
+				</tr>
+				</thead>
+				<tbody>
+				<!-- jinja2 Technique -->
+				{% if c %}
+				{% for i in c %}
+				<tr>
+					<td>{{i.id}}</td>
+					<td>{{i.username}}</td>
+					<td>{{i.text}}</td>
+		
+			
+			
+				</tr>
+				{% endfor %}
+				{% endif %}
+				</tbody>
+			</table>
+			</div>
+
+
+			<div class="container">
+				<h2 class="text-center"><u>10 - insights on media</u></h2><br>			
+				<table class="table table-dark table-striped">
+					<thead>
+					<tr>
+						
+						<th>name</th>
+						<th>period</th>
+
+			
+				
+					</tr>
+					</thead>
+					<tbody>
+
+					{% if e %}
+					{% for i in e %}
+					<tr>
+						
+						<td>{{i.name}}</td>
+						<td>{{i.period}}</td>
+
+			
+				
+				
+					</tr>
+					{% endfor %}
+					{% endif %}
+					</tbody>
+				</table>
+			</div>
+</main>
+  <!--Main layout-->
+  {% endblock %}
+
+</body>
+
+</html>

@@ -1,0 +1,102 @@
+{
+    "firstName": "Rohan",
+    "lastname": "L.",
+    "skills": [
+        "Risk Management",
+        "Risk Assessment",
+        "Project Management",
+        "Project Portfolio Management",
+        "EPCM",
+        "Management Consulting",
+        "Program Management",
+        "Strategic Planning",
+        "Enterprise Risk Management",
+        "IT Service Management",
+        "Governance",
+        "Financial Risk",
+        "PMO",
+        "SDLC",
+        "Project Delivery",
+        "Business Process Improvement",
+        "Stakeholder Management"
+    ],
+    "student": false,
+    "experience": [
+        "Bechtel Corporation",
+        "Pcubed",
+        "Brisbane City Council",
+        "Protiviti",
+        "PricewaterhouseCoopers"
+    ],
+    "education": [
+        {
+            "entityUrn": "urn:li:fs_education:(ACoAAABOU_kBUnsb9WagASyaztbqb65mZL49HdI,49860836)",
+            "school": {
+                "objectUrn": "urn:li:school:10250",
+                "entityUrn": "urn:li:fs_miniSchool:10250",
+                "active": true,
+                "schoolName": "University of Sydney",
+                "trackingId": "NWS2Vm1HQR6KSB6isGxF6w==",
+                "logoUrl": "https://media-exp1.licdn.com/dms/image/C560BAQHbPUZaDAMT6g/company-logo_"
+            },
+            "timePeriod": {
+                "endDate": {
+                    "year": 2011
+                },
+                "startDate": {
+                    "year": 2010
+                }
+            },
+            "schoolName": "University of Sydney",
+            "fieldOfStudy": "Project Management",
+            "schoolUrn": "urn:li:fs_miniSchool:10250"
+        },
+        {
+            "entityUrn": "urn:li:fs_education:(ACoAAABOU_kBUnsb9WagASyaztbqb65mZL49HdI,1412792)",
+            "school": {
+                "objectUrn": "urn:li:school:12571",
+                "entityUrn": "urn:li:fs_miniSchool:12571",
+                "active": true,
+                "schoolName": "Birkbeck, University of London",
+                "trackingId": "FB5Raf3tRSiw5V0CFMX9BA==",
+                "logoUrl": "https://media-exp1.licdn.com/dms/image/C560BAQGaJOJAlGOfLg/company-logo_"
+            },
+            "timePeriod": {
+                "endDate": {
+                    "year": 2003
+                },
+                "startDate": {
+                    "year": 2001
+                }
+            },
+            "schoolName": "Birkbeck, University of London",
+            "fieldOfStudy": "Philosophy",
+            "schoolUrn": "urn:li:fs_miniSchool:12571"
+        },
+        {
+            "entityUrn": "urn:li:fs_education:(ACoAAABOU_kBUnsb9WagASyaztbqb65mZL49HdI,1412307)",
+            "school": {
+                "objectUrn": "urn:li:school:10227",
+                "entityUrn": "urn:li:fs_miniSchool:10227",
+                "active": true,
+                "schoolName": "Griffith University",
+                "trackingId": "kRxbVt8WSzWWK60i5eHVHw==",
+                "logoUrl": "https://media-exp1.licdn.com/dms/image/C4D0BAQExmiYh8biSLA/company-logo_"
+            },
+            "timePeriod": {
+                "endDate": {
+                    "year": 1994
+                },
+                "startDate": {
+                    "year": 1992
+                }
+            },
+            "description": "Gold Coast, Australia",
+            "schoolName": "Griffith University",
+            "fieldOfStudy": "Hotel Management",
+            "schoolUrn": "urn:li:fs_miniSchool:10227"
+        }
+    ],
+    "industryName": "Mining & Metals",
+    "summary": "Specialising in project risk management and the strategic implementation of project management, I am passionate about working within organizations to maximise their project portfolio investment.\n\nAmongst my many interests the commercialization of space takes up much of my spare time. In particular I am attracted to projects that can make the colonization of Mars a reality, but also anything from Space Tourism to Space Mining or associated technologies involving teleoperations."
+}
