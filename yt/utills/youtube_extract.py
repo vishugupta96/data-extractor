@@ -18,10 +18,16 @@ from selenium.webdriver.common.by import By
 def yt_data_mine():
     youtube = {'followers':'','description':'','lifetime_views':''}
     #executable_path = os.path.join(settings.MEDIA_ROOT,"chromedriver.exe")
-    executable_path = 'chromedriver.exe'
-    print('executable_path: ', executable_path)
+    # executable_path = 'chromedriver.exe'
+    # print('executable_path: ', executable_path)
 
-    browser = webdriver.Chrome(executable_path)  
+    # browser = webdriver.Chrome(executable_path)  
+    chrome_options = webdriver.ChromeOptions()
+    chrome_options.binary_location = os.environ.get("GOOGLE_CHROME_BIN")
+    chrome_options.add_argument("--headless")
+    chrome_options.add_argument("--disable-dev-shm-usage")
+    chrome_options.add_argument("--no-sandbox")
+    browser = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), options=chrome_options)
     browser.get('https://www.youtube.com/channel/UCfLdIEPs1tYj4ieEdJnyNyw') 
     time.sleep(2) 
     followers = browser.find_elements_by_xpath("//yt-formatted-string[starts-with(@id,'subscriber-count')]")
