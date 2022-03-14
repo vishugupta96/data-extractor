@@ -80,7 +80,7 @@ def yt_data_mine():
         a.append(c)
     
     #video data
-    youtube['videos']  = a
+    df_v = pd.DataFrame.from_dict(a)
     time.sleep(2)
 
 
@@ -93,7 +93,7 @@ def yt_data_mine():
     time.sleep(2)
     for i in range(15):
         browser.execute_script("window.scrollTo(0, 1080)")
-    time.sleep(1)
+    time.sleep(5)
 
     asd = browser.find_element_by_xpath('/html/body/ytd-app/div/ytd-page-manager/ytd-watch-flexy/div[5]/div[1]/div/ytd-comments/ytd-item-section-renderer/div[1]/ytd-comments-header-renderer/div[1]/h2')
     # asd.text.split(' ')
@@ -128,18 +128,18 @@ def yt_data_mine():
                 c['likes'] = list_[i]
         a.append(c)
     # COMMENTS DATA
-    youtube['comments']  = a
+    df_c = pd.DataFrame.from_dict(a)
 
 
-    # ff = {'comment_count':youtube['comments_count']}
-    # df_v = pd.DataFrame.from_dict(youtube['videos'])
-    # df_c = pd.DataFrame.from_dict(youtube['comments'])
-    # df_d  = pd.DataFrame.from_dict([ff])
+    ff = {'comment_count':youtube['comments_count']}
+    
+    
+    df_ff  = pd.DataFrame.from_dict(youtube)
 
 
-    # df_v.to_csv('yt_videos.csv', index=False)
-    # df_c.to_csv('yt_comments.csv', index=False)
-    # df_d.to_csv('yt_comments.csv', index=False)
+    df_v.to_csv('yt_videos.csv', index=False)
+    df_c.to_csv('yt_comments.csv', index=False)
+    df_d.to_csv('yt_comments.csv', index=False)
 
 
     return (youtube)

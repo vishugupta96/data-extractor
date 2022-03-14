@@ -55,10 +55,15 @@ def dashboard(request):
 @allowed_users(allowed_roles=['admin','client', 'manager'])
 
 def youtube(request):
+    vid_path = os.path.join(settings.MEDIA_ROOT,'yt_videos.csv')
+    comm_path = os.path.join(settings.MEDIA_ROOT,'yt_comments.csv')
     if request.method == 'GET':
-        info_yt = pd.read_csv("yt/utills/yt_info.csv")
-        video_yt = pd.read_csv("yt/utills/yt_videos.csv")
-        comments_yt = pd.read_csv("yt/utills/yt_comments.csv")
+        t = os.path.join(settings.MEDIA_ROOT,'yt_info.csv')
+        info_yt = pd.read_csv(t)
+        t = os.path.join(settings.MEDIA_ROOT,'yt_videos.csv')
+        video_yt = pd.read_csv(t)
+        t = os.path.join(settings.MEDIA_ROOT,'yt_comments.csv')
+        comments_yt = pd.read_csv(t)
 
         json_records = video_yt.reset_index().to_json(orient ='records')
         data_v = []
@@ -67,25 +72,29 @@ def youtube(request):
         json_records = comments_yt.reset_index().to_json(orient ='records')
         data_c = []
         data_c = json.loads(json_records)
+
+
         
 
         context = { 
-        'yt_media':    info_yt.iloc[0]['media_count'],
         'yt_followers':info_yt.iloc[0]['followers'],
-        'yt_following':info_yt.iloc[0]['lifetimeview'],
+        'yt_following':info_yt.iloc[0]['lifetime_views'],
         'video_yt' : data_v,
         'comments_yt':data_c,
         'file_url_1':'/file/yt_info.csv',
-        'file_url_2':'/file/yt_videos.csv',
-        'file_url_3':'/file/yt_comments.csv'}
+        'file_url_2':vid_path,
+        'file_url_3':comm_path}
 
     if request.method =='POST':
         youtube = youtube_extract.yt_data_mine()
-        
-        video_yt = pd.DataFrame.from_dict(youtube['videos'])
-        comments_yt = pd.DataFrame.from_dict(youtube['comments'])
 
-        
+        # t = os.path.join(settings.MEDIA_ROOT,'yt_info.csv')
+        # info_yt = pd.read_csv(t)
+        t = os.path.join(settings.MEDIA_ROOT,'yt_videos.csv')
+        video_yt = pd.read_csv(t)
+        t = os.path.join(settings.MEDIA_ROOT,'yt_comments.csv')
+        comments_yt = pd.read_csv(t)
+
         json_records = video_yt.reset_index().to_json(orient ='records')
         data_v = []
         data_v = json.loads(json_records)
@@ -93,8 +102,10 @@ def youtube(request):
         json_records = comments_yt.reset_index().to_json(orient ='records')
         data_c = []
         data_c = json.loads(json_records)
-        video_yt.to_csv('static/file/yt_videos.csv', index=False)
-        comments_yt.to_csv('static/file/yt_comments.csv', index=False)
+        
+
+        # video_yt.to_csv('static/file/yt_videos.csv', index=False)
+        # comments_yt.to_csv('static/file/yt_comments.csv', index=False)
 
         #info to array then into a file and then to frontend
 
@@ -105,8 +116,8 @@ def youtube(request):
         'video_yt' : data_v,
         'comments_yt':data_c,
         'file_url_1':'/file/yt_info.csv',
-        'file_url_2':'/file/yt_videos.csv',
-        'file_url_3':'/file/yt_comments.csv'
+        'file_url_2':vid_path,
+        'file_url_3':comm_path
         }
 
     return render(request,'yt_table.html',context)
