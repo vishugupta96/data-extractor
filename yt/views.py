@@ -79,6 +79,7 @@ def youtube(request):
         context = { 
         'yt_followers':info_yt.iloc[0]['followers'],
         'yt_following':info_yt.iloc[0]['lifetime_views'],
+        'yt_comments_count':info_yt.iloc[0]['comments_count'],
         'video_yt' : data_v,
         'comments_yt':data_c,
         'file_url_1':'/file/yt_info.csv',
@@ -88,8 +89,8 @@ def youtube(request):
     if request.method =='POST':
         youtube = youtube_extract.yt_data_mine()
 
-        # t = os.path.join(settings.MEDIA_ROOT,'yt_info.csv')
-        # info_yt = pd.read_csv(t)
+        t = os.path.join(settings.MEDIA_ROOT,'yt_info.csv')
+        info_yt = pd.read_csv(t)
         t = os.path.join(settings.MEDIA_ROOT,'yt_videos.csv')
         video_yt = pd.read_csv(t)
         t = os.path.join(settings.MEDIA_ROOT,'yt_comments.csv')

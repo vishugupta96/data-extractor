@@ -137,9 +137,9 @@ def yt_data_mine():
     df_ff  = pd.DataFrame.from_dict(youtube)
 
 
-    df_v.to_csv('yt_videos.csv', index=False)
-    df_c.to_csv('yt_comments.csv', index=False)
-    df_d.to_csv('yt_comments.csv', index=False)
+    df_v.to_csv('static/file/yt_videos.csv', index=False)
+    df_c.to_csv('static/file/yt_comments.csv', index=False)
+    df_d.to_csv('static/file/yt_comments.csv', index=False)
 
 
     return (youtube)
