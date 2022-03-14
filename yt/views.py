@@ -74,7 +74,6 @@ def youtube(request):
         data_c = json.loads(json_records)
 
 
-        
 
         context = { 
         'yt_followers':info_yt.iloc[0]['followers'],
