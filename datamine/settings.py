@@ -31,7 +31,7 @@ SECRET_KEY = 'django-insecure-f2+0s8k#if10gh34ffxciu8_flv7%vlthv=(qwr*=%p4wv%+f9
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1','data-miner-2022.herokuapp.com']
+ALLOWED_HOSTS = ['127.0.0.1','data-miner-2022.herokuapp.com','social-datamine.herokuapp.com']
 
 
 
