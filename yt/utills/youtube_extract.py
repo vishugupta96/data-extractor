@@ -38,7 +38,7 @@ def yt_data_mine():
     browser.maximize_window()
     time.sleep(1)
     description = browser.find_elements_by_xpath('//*[@id="tabsContent"]/tp-yt-paper-tab[7]/div')
-    print(description[0].text)
+
     time.sleep(1)
     description[0].click()
     time.sleep(1)
@@ -66,7 +66,7 @@ def yt_data_mine():
     for i in range(1,25):
         c = {}
         t = videos.find_element_by_xpath('//*[@id="items"]/ytd-grid-video-renderer['+ str(i)+']')
-        print(t.text.split('\n'))
+
         list_ = t.text.split('\n')
         for i in range(len(list_)):
             if i == 0:
