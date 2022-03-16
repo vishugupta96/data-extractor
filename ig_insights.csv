@@ -1,4 +1,0 @@
-,name,period,values,title,description,id
-0,impressions,lifetime,[{'value': 2243}],Impressions,Total number of times the media object has been seen,17858983892303896/insights/impressions/lifetime
-1,reach,lifetime,[{'value': 1820}],Reach,Total number of unique accounts that have seen the media object,17858983892303896/insights/reach/lifetime
-2,engagement,lifetime,[{'value': 342}],Engagement,Total number of likes and comments on the media object,17858983892303896/insights/engagement/lifetime
