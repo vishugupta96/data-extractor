@@ -87,8 +87,9 @@ def yt_data_mine():
 
     element = browser.find_element_by_xpath('/html/body/ytd-app/div/ytd-page-manager/ytd-browse/ytd-two-column-browse-results-renderer/div[1]/ytd-section-list-renderer/div[2]/ytd-item-section-renderer/div[3]/ytd-grid-renderer/div[1]/ytd-grid-video-renderer[8]')
     # ast = browser.find_element_by_tag_name('a')
-    ast = element.find_element(By.TAG_NAME, 'a')
+    ast = element.find_element_by_tag_name('a')
     browser.execute_script("arguments[0].click();", ast)
+
 
     time.sleep(2)
     for i in range(15):
