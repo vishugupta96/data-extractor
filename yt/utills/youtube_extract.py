@@ -36,12 +36,12 @@ def yt_data_mine():
     youtube['followers'] = followers[0].text
     #PATH = input("Enter the Webdriver path: ")
     browser.maximize_window()
-    time.sleep(2)
+    time.sleep(1)
     description = browser.find_elements_by_xpath('//*[@id="tabsContent"]/tp-yt-paper-tab[7]/div')
     print(description[0].text)
-    time.sleep(2)
+    time.sleep(1)
     description[0].click()
-    time.sleep(2)
+    time.sleep(1)
 
     youtube['description'] = description[0].text
     description = browser.find_element_by_xpath("//yt-formatted-string[starts-with(@id,'description')]")
@@ -52,11 +52,11 @@ def yt_data_mine():
     vids_tab = browser.find_element_by_xpath('//*[@id="tabsContent"]/tp-yt-paper-tab[2]/div')
     # print(vids_tab.text)
 
-    time.sleep(2)
+    time.sleep(1)
     vids_tab.click()
-    time.sleep(2)
+    time.sleep(1)
     browser.execute_script("window.scrollTo(2, 1080)")
-    time.sleep(2)
+    time.sleep(1)
 
     browser.execute_script("window.scrollTo(2, 1080)")
     videos = browser.find_element_by_xpath('/html/body/ytd-app/div/ytd-page-manager/ytd-browse/ytd-two-column-browse-results-renderer/div[1]/ytd-section-list-renderer/div[2]/ytd-item-section-renderer/div[3]/ytd-grid-renderer/div[1]')
@@ -105,7 +105,7 @@ def yt_data_mine():
     a = []
 
     comments = browser.find_element_by_xpath('/html/body/ytd-app/div/ytd-page-manager/ytd-watch-flexy/div[5]/div[1]/div/ytd-comments/ytd-item-section-renderer/div[3]')
-    time.sleep(4)
+    time.sleep(1)
 
     
     time.sleep(4)
