@@ -18,6 +18,7 @@ from django.http import HttpResponse, Http404
 from datamine import settings
 
 from django.http import request
+from django.http import JsonResponse
 
 def start(request):
 
@@ -55,15 +56,29 @@ def dashboard(request):
 @allowed_users(allowed_roles=['admin','client', 'manager'])
 
 def youtube(request):
+    c_id = '1'
+    #print('SADF',request.user.id)
     vid_path = os.path.join(settings.MEDIA_ROOT,'yt_videos.csv')
-    comm_path = os.path.join(settings.MEDIA_ROOT,'yt_comments.csv')
+    # comm_path = os.path.join(settings.MEDIA_ROOT,'yt_comments.csv')
     if request.method == 'GET':
         t = os.path.join(settings.MEDIA_ROOT,'yt_info.csv')
         info_yt = pd.read_csv(t)
-        t = os.path.join(settings.MEDIA_ROOT,'yt_videos.csv')
-        video_yt = pd.read_csv(t)
-        t = os.path.join(settings.MEDIA_ROOT,'yt_comments.csv')
-        comments_yt = pd.read_csv(t)
+        f1 = 'clients'
+        f1 = os.path.join('clients',c_id)
+        f2 = os.path.join(f1,'yt_videos.csv')
+
+        # differnce between 2 csv
+        # vid_path = os.path.join(settings.MEDIA_ROOT,f2)
+        # print(vid_path)
+        video_yt = pd.read_csv(vid_path)
+
+        f3 = os.path.join(f1,'yt_comments.csv')
+        comm_path = os.path.join(settings.MEDIA_ROOT,f3)
+       
+        comments_yt = pd.read_csv(comm_path)
+        comments_yt = comments_yt.reset_index(drop=True)
+        print('c',comments_yt.iloc[0])
+
 
         json_records = video_yt.reset_index().to_json(orient ='records')
         data_v = []
@@ -74,53 +89,24 @@ def youtube(request):
         data_c = json.loads(json_records)
 
 
+        
 
         context = { 
         'yt_followers':info_yt.iloc[0]['followers'],
         'yt_following':info_yt.iloc[0]['lifetime_views'],
-        'yt_comments_count':info_yt.iloc[0]['comments_count'],
-        'video_yt' : data_v,
+        'video_yt': data_v,
         'comments_yt':data_c,
         'file_url_1':'/file/yt_info.csv',
         'file_url_2':vid_path,
         'file_url_3':comm_path}
+        return render(request,'yt_table.html',context)
 
-    if request.method =='POST':
-        youtube = youtube_extract.yt_data_mine()
 
-        t = os.path.join(settings.MEDIA_ROOT,'yt_info.csv')
-        info_yt = pd.read_csv(t)
-        t = os.path.join(settings.MEDIA_ROOT,'yt_videos.csv')
-        video_yt = pd.read_csv(t)
-        t = os.path.join(settings.MEDIA_ROOT,'yt_comments.csv')
-        comments_yt = pd.read_csv(t)
+def yt_data(request):
+    id  = '1'
+    youtube = youtube_extract.yt_data_mine(id)
+    return JsonResponse({'data':'yes'})
 
-        json_records = video_yt.reset_index().to_json(orient ='records')
-        data_v = []
-        data_v = json.loads(json_records)
-
-        json_records = comments_yt.reset_index().to_json(orient ='records')
-        data_c = []
-        data_c = json.loads(json_records)
-        
-
-        # video_yt.to_csv('static/file/yt_videos.csv', index=False)
-        # comments_yt.to_csv('static/file/yt_comments.csv', index=False)
-
-        #info to array then into a file and then to frontend
-
-        context = { 
-        'yt_followers':youtube['followers'],
-        'yt_following':youtube['lifetime_views'],
-        'yt_comments_count':youtube['comments_count'],
-        'video_yt' : data_v,
-        'comments_yt':data_c,
-        'file_url_1':'/file/yt_info.csv',
-        'file_url_2':vid_path,
-        'file_url_3':comm_path
-        }
-
-    return render(request,'yt_table.html',context)
 
 #################################################################################
 @login_required(login_url='main:login')

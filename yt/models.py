@@ -1,5 +1,6 @@
 from django.db import models
 from django.contrib.auth.models import User
+from django.db.models.signals import post_save
 
 # from django.db.models.fields import CharField
 
@@ -43,11 +44,24 @@ class Client(models.Model):
     twitter_file_url = models.URLField(blank= True,null=True)
 
 
+
     def assigned_to(self):
         return ",".join([str(p) for p in self.allowed_users.all()])
 
     def __str__(self):
         return self.username
+
+
+def create_client(sender, instance, created, **kwargs,):
+    c_id = '1'
+    # get id from created instance
+    if created:
+        os.mkdir('static/file/clients/'+c_id)
+        c_id = instance.id
+        print(c_id)
+post_save.connect(create_client,sender = Client)
+
+
 
 class Link(models.Model):
     user = models.ForeignKey(User,on_delete=models.CASCADE)

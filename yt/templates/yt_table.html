@@ -38,16 +38,11 @@
 
   <div class="container">
 	<h1 class="text-center"> Youtube Data </h1><br>
-    <form action="" method="post">
-      {% csrf_token %}
-      <div class="form-group" >
-        <label for="screen">Press Run Extract data </label>
-        
-      </div>
+	<button >Get External Content</button>
 
-      <button type="submit" class="btn btn-primary">Run</button>
-    </form>
-		</br>
+	<div id = 'loading' class="spinner-border" role="status" style="display: none;">
+        <span class="sr-only">Loading...</span>
+  </div>
 
 
     
@@ -113,6 +108,7 @@
 			<th>Duration</th>
 			<th>Name</th>
 			<th>Views</th>
+			<th>time</th>
 
 		</thead>
 		<tbody>
@@ -120,8 +116,9 @@
 		{% for i in video_yt %}
 		<tr>
 			<td>{{i.duration}}</td>
-			<td>{{i.name}}</td>
+			<td>{{i.names}}</td>
 			<td>{{i.views}}</td>
+			<td>{{i.time}}</td>
 			
 
 
@@ -132,6 +129,35 @@
 		</tbody>
 
 	</table>
+	<script>
+    
+        // Function for adding User data and removing loading animation
+        var replace_data = function(){
+            $('#loading').remove();
+        }
+    
+        // AJAX call when page has loaded
+        $(document).ready(function(){
+            $('button').click(function(){
+                $('button').hide();
+                $('#loading').show();
+
+                $.ajax({
+                    url: '/yt/data/',
+                    data: {
+                        'name': 'data'
+                    },
+                    data_type: 'json',
+                    success: function(){
+                    		console.log('gg')
+                        replace_data();
+                        location.reload();
+                    }
+                });
+        });
+        });
+    
+    </script>
 
 	</div>
 </main>

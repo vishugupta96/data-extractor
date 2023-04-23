@@ -16,7 +16,11 @@ urlpatterns = [
     path('linkedin/', views.linked,name= 'linked'),
     path('client-new/', views.add_new,name= 'showclients'),
     path('client-del/<int:id>/',views.delete_data, name='deletedata'),
-    path('client-update/<int:id>/',views.update_client, name='updatedata')
+    path('client-update/<int:id>/',views.update_client, name='updatedata'),
+    path('yt/data/', views.yt_data,name= 'yt-data'),
+    #path('loader/',views.AjaxHandelerView, name='load'),
+    #path('test2/',views.processdata, name='data')
+
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
